@@ -1,0 +1,155 @@
+.problem-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Ensure transparency */
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Rest of the styles remain unchanged */
+.tagline-container {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-tagline {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline-decoration {
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, #00ffff, transparent);
+  margin: 0 auto;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(1.1); }
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.problem-card {
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 255, 255, 0.5);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin: 0;
+}
+
+.card-quote {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #00ffff;
+}
+
+.card-solution {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.product-name {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+.card-underline {
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, transparent);
+  margin-top: 1.5rem;
+  opacity: 0.5;
+}
+
+.mission-statement {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.mission-text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-tagline {
+    font-size: 2rem;
+  }
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+  .mission-text {
+    font-size: 1.1rem;
+  }
+}

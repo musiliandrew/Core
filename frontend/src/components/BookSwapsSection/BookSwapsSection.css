@@ -1,0 +1,231 @@
+.bookswaps-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 2rem; /* Matches header height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Explicitly ensure app-container background shows */
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10; /* Above app-container background layers */
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.product-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.5));
+}
+
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.product-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.product-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+}
+
+.product-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-item {
+  background: rgba(0, 255, 255, 0.1); /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00ffff;
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+}
+
+.testimonial {
+  position: relative;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  background: rgba(10, 10, 20, 0.6); /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  border-left: 3px solid #00ffff;
+  border-radius: 0 8px 8px 0;
+}
+
+.testimonial cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #00ffff;
+  margin-top: 1rem;
+}
+
+.product-visual {
+  position: relative;
+}
+
+.screenshot {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.screenshot:hover {
+  transform: scale(1.02);
+}
+
+.screenshot-frame {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  left: -20px;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 24px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  border: none;
+  color: #0a0a0a;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Rajdhani', sans-serif;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+}
+
+.cta-icon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .product-showcase {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .product-showcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-visual {
+    order: -1;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .product-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-text {
+    font-size: 1.1rem;
+  }
+}

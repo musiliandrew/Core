@@ -1,0 +1,214 @@
+.pillars-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Ensure app-container background shows through */
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10; /* Ensure content is above background layers */
+}
+
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pillars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 6rem;
+}
+
+.pillar-card {
+  background: rgba(10, 10, 20, 0.6); /* Semi-transparent glass effect */
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.05);
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 255, 255, 0.15);
+}
+
+.pillar-visual {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.visual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pillar-card:hover .visual-image {
+  transform: scale(1.05);
+}
+
+.visual-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.8) 100%);
+}
+
+.pillar-content {
+  padding: 2rem;
+}
+
+.pillar-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-bottom: 1rem;
+}
+
+.pillar-description {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.mission-statement {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 3rem;
+  background: rgba(0, 255, 255, 0.05); /* Semi-transparent glass effect */
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  text-align: center;
+}
+
+.mission-question {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-bottom: 1.5rem;
+}
+
+.mission-answer {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: #00ffff;
+  font-weight: 700;
+}
+
+.mission-reasons p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.flow {
+  display: inline-block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  color: #00ffff;
+  margin: 1rem 0;
+}
+
+.highlight-items {
+  display: inline-block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  color: #00ffff;
+  margin: 1rem 0;
+}
+
+.cta-pillars {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-pillars:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-pillars:hover .arrow {
+  transform: translateY(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .pillars-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .mission-statement {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .pillar-name {
+    font-size: 1.5rem;
+  }
+  
+  .pillar-description {
+    font-size: 1rem;
+  }
+}

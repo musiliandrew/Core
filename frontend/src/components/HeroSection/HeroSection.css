@@ -1,0 +1,298 @@
+.hero-section {
+  font-family: 'Inter', 'Arial', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  color: white;
+  background: transparent; /* Ensure transparency to show app-container background */
+}
+
+.main-container {
+  padding-top: 6rem; /* Matches header height */
+  height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  text-align: center;
+  max-width: 800px;
+  margin-top: 2rem;
+  z-index: 10;
+}
+
+.headline {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Rajdhani', 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.subheadline {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  border: none;
+  color: #0a0a0a;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  font-family: 'Rajdhani', 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+}
+
+.cta-button:active {
+  transform: translateY(1px);
+}
+
+.visual-container {
+  margin: 0 auto 3rem;
+  transform: translateY(-5%);
+}
+
+.ai-visual {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px #00ffff);
+  animation: logoFloat 6s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.holographic-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  background: transparent;
+  animation: ringRotate 10s linear infinite;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+@keyframes ringRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.data-hexagon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  background: transparent;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: hexagonPulse 4s ease-in-out infinite;
+}
+
+@keyframes hexagonPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.8; }
+}
+
+.neural-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+.scanner-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  animation: scanRotate 8s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes scanRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.tech-corner {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-top: 3px solid #00ffff;
+  border-right: 3px solid #00ffff;
+  animation: cornerGlow 3s ease-in-out infinite alternate;
+}
+
+.tech-corner::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 20px;
+  height: 3px;
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.tech-corner::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 3px;
+  height: 20px;
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes cornerGlow {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.bottom-tech {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 3px solid #00ffff;
+  border-left: 3px solid #00ffff;
+  animation: cornerGlow 3s ease-in-out infinite alternate;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: orbitRotate 15s linear infinite reverse;
+}
+
+@keyframes orbitRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbit-dot {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ffff;
+  animation: nodeFlicker 3s ease-in-out infinite;
+}
+
+@keyframes nodeFlicker {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-container {
+    padding-top: 10rem;
+    height: calc(100vh - 10rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding-top: 9rem;
+    height: calc(100vh - 9rem);
+  }
+  .headline {
+    font-size: 2.5rem;
+  }
+  .subheadline {
+    font-size: 1.1rem;
+  }
+  .visual-container {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding-top: 8rem;
+    height: calc(100vh - 8rem);
+  }
+  .headline {
+    font-size: 2rem;
+  }
+  .subheadline {
+    font-size: 1rem;
+  }
+  .visual-container {
+    width: 300px;
+    height: 300px;
+  }
+  .ai-visual {
+    width: 150px;
+    height: 150px;
+  }
+}

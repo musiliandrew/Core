@@ -1,0 +1,173 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.7); /* Semi-transparent for glassmorphism */
+  backdrop-filter: blur(8px); /* Blurry effect to show app-container background */
+  -webkit-backdrop-filter: blur(8px);
+  height: 6rem;
+  transition: background 0.3s ease;
+}
+
+.main-header.scrolled {
+  background: rgba(10, 10, 10, 0.8); /* Slightly more opaque when scrolled */
+  box-shadow: 0 2px 20px rgba(0, 255, 255, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.company-logo {
+  height: 3.5rem;
+  width: auto;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.7));
+}
+
+.company-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+  letter-spacing: 1.5px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.main-nav a:hover {
+  color: #00ffff;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ffff;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.join-btn, .demo-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.join-btn {
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+}
+
+.join-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.demo-btn {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  border: none;
+  color: #0a0a0a;
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-header {
+    padding: 1.2rem 2rem;
+  }
+  .company-logo {
+    height: 3rem;
+  }
+  .company-name {
+    font-size: 2rem;
+  }
+  .main-nav ul {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  .logo-container {
+    margin-bottom: 0.5rem;
+  }
+  .company-logo {
+    height: 2.5rem;
+  }
+  .company-name {
+    font-size: 1.8rem;
+  }
+  .main-nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    gap: 1rem;
+  }
+  .company-logo {
+    height: 2rem;
+  }
+  .company-name {
+    font-size: 1.5rem;
+  }
+  .header-actions {
+    gap: 0.5rem;
+  }
+  .join-btn, .demo-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
