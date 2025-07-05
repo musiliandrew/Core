@@ -1,12 +1,31 @@
 .join-mission-section {
   position: relative;
   min-height: 100vh;
-  padding: 6rem 2rem; /* Matches header height */
+  padding: 3rem 1rem; /* Mobile-first padding */
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent; /* Use app-container background */
   overflow: hidden;
+}
+
+/* Responsive padding */
+@media (min-width: 480px) {
+  .join-mission-section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .join-mission-section {
+    padding: 5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .join-mission-section {
+    padding: 6rem 2rem;
+  }
 }
 
 /* Removed ::before pseudo-element to avoid conflicting background */
@@ -270,41 +289,218 @@
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .section-title {
-    font-size: 3rem;
-  }
-  .mission-content {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
+/* Responsive adjustments - Mobile First */
+@media (max-width: 320px) {
   .title-container {
     flex-direction: column;
     text-align: center;
-  }
-  .section-title {
-    margin-right: 0;
     margin-bottom: 2rem;
   }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .logo-pulse {
+    width: 80px;
+    height: 80px;
+  }
+
+  .mission-logo {
+    width: 50px;
+  }
+
   .mission-content {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
+
   .call-to-action {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+
+  .roles-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .role-card {
+    padding: 1rem;
+  }
+
+  .role-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .role-card p {
+    font-size: 0.85rem;
+  }
+
+  .benefits-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefits-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .join-form-container {
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.875rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .submit-button {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .contact-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 321px) and (max-width: 480px) {
+  .title-container {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
   .section-title {
     font-size: 2.2rem;
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
+
+  .logo-pulse {
+    width: 100px;
+    height: 100px;
+  }
+
+  .mission-logo {
+    width: 60px;
+  }
+
+  .mission-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .call-to-action {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
   .roles-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
+
   .join-form-container {
-    padding: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .title-container {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.75rem;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .mission-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .call-to-action {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+
+  .roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .mission-content {
+    gap: 2rem;
+  }
+
+  .roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    min-height: 48px;
+  }
+
+  .submit-button {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  .submit-button:active {
+    transform: scale(0.98);
+  }
+
+  .contact-button {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .contact-button:active {
+    transform: scale(0.98);
+  }
+
+  .role-card {
+    transition: transform 0.2s ease;
+  }
+
+  .role-card:active {
+    transform: translateY(-3px);
   }
 }

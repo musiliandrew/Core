@@ -15,10 +15,17 @@
   background-image:
     linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 25px 25px; /* Smaller grid for mobile */
   animation: gridMove 20s linear infinite;
   z-index: 1;
   pointer-events: none;
+}
+
+/* Responsive grid sizing */
+@media (min-width: 768px) {
+  .cyber-grid {
+    background-size: 50px 50px;
+  }
 }
 
 @keyframes gridMove {
@@ -38,12 +45,21 @@
 
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 3px; /* Smaller for mobile */
+  height: 3px;
   background: #00ffff;
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 0.5; /* Reduced opacity for mobile performance */
   animation: float 15s infinite linear;
+}
+
+/* Responsive particle sizing */
+@media (min-width: 768px) {
+  .particle {
+    width: 4px;
+    height: 4px;
+    opacity: 0.7;
+  }
 }
 
 @keyframes float {
@@ -134,9 +150,17 @@
 .symbol {
   position: absolute;
   color: #00ffff;
-  font-size: 24px;
-  opacity: 0.3;
+  font-size: 18px; /* Smaller for mobile */
+  opacity: 0.2; /* Reduced for mobile performance */
   animation: symbolDrift 20s infinite linear;
+}
+
+/* Responsive symbol sizing */
+@media (min-width: 768px) {
+  .symbol {
+    font-size: 24px;
+    opacity: 0.3;
+  }
 }
 
 @keyframes symbolDrift {
@@ -179,9 +203,17 @@
   top: 0;
   color: #00ffff;
   font-family: monospace;
-  font-size: 14px;
-  opacity: 0.4;
+  font-size: 12px; /* Smaller for mobile */
+  opacity: 0.3; /* Reduced for mobile performance */
   animation: matrixFall 8s infinite linear;
+}
+
+/* Responsive matrix sizing */
+@media (min-width: 768px) {
+  .matrix-column {
+    font-size: 14px;
+    opacity: 0.4;
+  }
 }
 
 @keyframes matrixFall {

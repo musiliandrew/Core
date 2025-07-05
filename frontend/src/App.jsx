@@ -20,13 +20,19 @@ function App() {
   const quantumFieldRef = useRef(null);
 
   useEffect(() => {
+    // Check if device is mobile for performance optimization
+    const isMobile = window.innerWidth <= 768;
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Create floating particles
     const createParticles = () => {
       const container = particlesRef.current;
       if (!container) return;
 
       container.innerHTML = '';
-      for (let i = 0; i < 50; i++) {
+      const particleCount = isMobile ? 25 : 50; // Reduce particles on mobile
+
+      for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
@@ -43,8 +49,10 @@ function App() {
 
       container.innerHTML = '';
       const nodes = [];
+      const nodeCount = isMobile ? 10 : 20; // Reduce nodes on mobile
+      const connectionCount = isMobile ? 5 : 10; // Reduce connections on mobile
 
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < nodeCount; i++) {
         const node = document.createElement('div');
         node.className = 'neural-node';
         node.style.left = Math.random() * 100 + '%';
@@ -54,12 +62,12 @@ function App() {
         nodes.push(node);
       }
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < connectionCount; i++) {
         const connection = document.createElement('div');
         connection.className = 'neural-connection';
         connection.style.left = Math.random() * 100 + '%';
         connection.style.top = Math.random() * 100 + '%';
-        connection.style.width = Math.random() * 200 + 50 + 'px';
+        connection.style.width = Math.random() * (isMobile ? 100 : 200) + 50 + 'px';
         connection.style.transform = `rotate(${Math.random() * 360}deg)`;
         connection.style.animationDelay = Math.random() * 3 + 's';
         container.appendChild(connection);
@@ -72,7 +80,9 @@ function App() {
       if (!container) return;
 
       container.innerHTML = '';
-      for (let i = 0; i < 15; i++) {
+      const streamCount = isMobile ? 8 : 15; // Reduce streams on mobile
+
+      for (let i = 0; i < streamCount; i++) {
         const stream = document.createElement('div');
         stream.className = 'stream';
         stream.style.left = Math.random() * 100 + '%';
@@ -89,8 +99,9 @@ function App() {
 
       container.innerHTML = '';
       const symbols = ['∆', '∇', '∑', '∏', '∫', '∂', '∞', '≈', '≠', '≤', '≥', '∀', '∃', '∈', '∉', '⊂', '⊃', '∪', '∩', '∧', '∨', '¬', '→', '←', '↑', '↓', '↔', '⇒', '⇔'];
+      const symbolCount = isMobile ? 15 : 30; // Reduce symbols on mobile
 
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < symbolCount; i++) {
         const symbol = document.createElement('div');
         symbol.className = 'symbol';
         symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
@@ -108,15 +119,17 @@ function App() {
 
       container.innerHTML = '';
       const chars = '01';
+      const columnCount = isMobile ? 10 : 20; // Reduce columns on mobile
+      const rowCount = isMobile ? 15 : 20; // Reduce rows on mobile
 
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < columnCount; i++) {
         const column = document.createElement('div');
         column.className = 'matrix-column';
         column.style.left = Math.random() * 100 + '%';
         column.style.animationDelay = Math.random() * 8 + 's';
 
         let text = '';
-        for (let j = 0; j < 20; j++) {
+        for (let j = 0; j < rowCount; j++) {
           text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
         }
         column.innerHTML = text;
@@ -135,12 +148,14 @@ function App() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Initialize effects
-    createParticles();
-    createNeuralNetwork();
-    createDataStreams();
-    createAISymbols();
-    createMatrixRain();
+    // Initialize effects only if motion is not reduced
+    if (!isReducedMotion) {
+      createParticles();
+      createNeuralNetwork();
+      createDataStreams();
+      createAISymbols();
+      createMatrixRain();
+    }
 
     // Cleanup
     return () => {

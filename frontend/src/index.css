@@ -1,27 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
 
-/* Global reset and base styles */
+/* Global reset and base styles - Mobile First Approach */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 14px; /* Base font size for mobile */
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
   min-height: 100vh;
 }
 
+/* Mobile-first section scroll offset */
 section[id] {
-  scroll-margin-top: 6rem; /* Adjust if you change navbar height */
+  scroll-margin-top: 4rem; /* Mobile navbar height */
+}
+
+/* Responsive font scaling */
+@media (min-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  button, a, .interactive {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
