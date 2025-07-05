@@ -28,7 +28,7 @@ const JoinMissionSection = () => {
   };
 
   return (
-    <section className="join-mission-section">
+    <section className="join-mission-section" id="join-mission">
       <div className="section-content">
         <div className="title-container">
           <h2 className="section-title">

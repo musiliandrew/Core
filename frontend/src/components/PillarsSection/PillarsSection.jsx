@@ -6,7 +6,7 @@ import AIModel from '../../assets/ai-model.png';
 
 const PillarsSection = () => {
   return (
-    <section className="pillars-section">
+    <section className="pillars-section" id="pillars">
       <div className="section-content">
         <h2 className="section-title">
           <span className="gradient-text">Three Pillars,</span>

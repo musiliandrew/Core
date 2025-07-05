@@ -28,11 +28,11 @@ const Navbar = () => {
       </div>
       <nav className="main-nav">
         <ul className="nav-links">
-          <li><a href="#pillars">Solutions</a></li>
-          <li><a href="#how-it-works">Technology</a></li>
-          <li><a href="#why-quantiq">Research</a></li>
-          <li><a href="#book-swaps">About</a></li>
-          <li><a href="#join-mission">Contact</a></li>
+          <li><a href="#pillars">Products</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-quantiq">Why QuantIQ</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#join-mission">Join Us</a></li>
         </ul>
       </nav>
       <div className="header-actions">

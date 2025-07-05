@@ -8,16 +8,19 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.7); /* Semi-transparent for glassmorphism */
-  backdrop-filter: blur(8px); /* Blurry effect to show app-container background */
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(10, 10, 10, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   height: 6rem;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.05);
 }
 
 .main-header.scrolled {
-  background: rgba(10, 10, 10, 0.8); /* Slightly more opaque when scrolled */
-  box-shadow: 0 2px 20px rgba(0, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 .logo-container {

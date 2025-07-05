@@ -44,7 +44,7 @@ const WhyQuantIQSection = () => {
   ];
 
   return (
-    <section className="why-quantiq-section">
+    <section className="why-quantiq-section" id="why-quantiq">
       <div className="section-content">
         <h2 className="section-title">
           <span className="gradient-text">Why We're</span>

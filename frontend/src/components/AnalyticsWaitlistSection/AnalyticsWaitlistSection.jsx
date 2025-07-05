@@ -15,7 +15,7 @@ const AnalyticsWaitlistSection = () => {
   };
 
   return (
-    <section className="analytics-waitlist-section">
+    <section className="analytics-waitlist-section" id="analytics">
       <div className="section-content">
         <h2 className="section-title">
           <span className="gradient-text">QuantIQ Analytics:</span>

@@ -1,50 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
 
-/* src/App.css */
-.app-container {
-  position: relative;
+/* Global reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.app-container::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+html, body {
   height: 100%;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  z-index: -1;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.app-container::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  background-image: 
-    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: gridMove 20s linear infinite;
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
-}
-
-.main-header {
-  padding: 1rem 2rem;
-  height: 4rem;
+#root {
+  min-height: 100vh;
 }
 
 section[id] {
   scroll-margin-top: 6rem; /* Adjust if you change navbar height */
-}
-html {
-  scroll-behavior: smooth;
 }

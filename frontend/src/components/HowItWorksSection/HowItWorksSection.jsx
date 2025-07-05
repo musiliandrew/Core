@@ -10,7 +10,7 @@ const HowItWorksSection = () => {
   });
 
   return (
-    <section className="how-it-works-section" ref={ref}>
+    <section className="how-it-works-section" id="how-it-works" ref={ref}>
       <div className="section-content">
         <h2 className="section-title">
           <span className="gradient-text">From Data</span>

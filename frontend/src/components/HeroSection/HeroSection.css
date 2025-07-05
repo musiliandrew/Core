@@ -8,7 +8,7 @@
 
 .main-container {
   padding-top: 6rem; /* Matches header height */
-  height: calc(100vh - 6rem);
+  min-height: calc(100vh - 6rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -256,14 +256,14 @@
 @media (max-width: 1024px) {
   .main-container {
     padding-top: 10rem;
-    height: calc(100vh - 10rem);
+    min-height: calc(100vh - 10rem);
   }
 }
 
 @media (max-width: 768px) {
   .main-container {
     padding-top: 9rem;
-    height: calc(100vh - 9rem);
+    min-height: calc(100vh - 9rem);
   }
   .headline {
     font-size: 2.5rem;
@@ -279,7 +279,7 @@
 @media (max-width: 480px) {
   .main-container {
     padding-top: 8rem;
-    height: calc(100vh - 8rem);
+    min-height: calc(100vh - 8rem);
   }
   .headline {
     font-size: 2rem;

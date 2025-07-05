@@ -7,7 +7,7 @@ import { FaExchangeAlt, FaBookOpen, FaUsers, FaArrowRight } from 'react-icons/fa
 
 const BookSwapsSection = () => {
   return (
-    <section className="bookswaps-section">
+    <section className="bookswaps-section" id="book-swaps">
       <div className="section-content">
         <div className="product-header">
           <img src={BookSwapsLogo} alt="BookSwaps Logo" className="product-logo" />
