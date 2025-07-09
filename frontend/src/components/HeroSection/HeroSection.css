@@ -78,6 +78,10 @@
 }
 
 .ai-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
   object-fit: contain;
@@ -87,8 +91,8 @@
 }
 
 @keyframes logoFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(2deg); }
+  0%, 100% { transform: translate(-50%, -50%) translateY(0) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) translateY(-10px) rotate(2deg); }
 }
 
 .holographic-ring {
@@ -280,6 +284,7 @@
   .ai-visual {
     width: 120px;
     height: 120px;
+    transform: translate(-50%, -50%);
   }
 
   .cta-button {
@@ -315,6 +320,7 @@
   .ai-visual {
     width: 150px;
     height: 150px;
+    transform: translate(-50%, -50%);
   }
 
   .cta-button {
@@ -350,6 +356,7 @@
   .ai-visual {
     width: 175px;
     height: 175px;
+    transform: translate(-50%, -50%);
   }
 }
 
