@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  quantiq-landing:
+    build: .
+    container_name: quantiq-landing
+    restart: unless-stopped
+    networks:
+      - bookswaps_app-network
+
+networks:
+  bookswaps_app-network:
+    external: true

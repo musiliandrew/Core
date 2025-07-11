@@ -1,0 +1,60 @@
+events {
+    worker_connections 1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    
+    sendfile        on;
+    keepalive_timeout  65;
+    
+    # Rate limiting
+    limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;
+    
+    # Main landing page - quantiq.co.ke
+    server {
+        listen 80;
+        server_name quantiq.co.ke www.quantiq.co.ke;
+        
+        location / {
+            proxy_pass http://quantiq-landing:80;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+    
+    # BookSwaps subdomain - bookswaps.quantiq.co.ke
+    server {
+        listen 80;
+        server_name bookswaps.quantiq.co.ke;
+        
+        location / {
+            # Replace 'bookswaps-container' with your actual BookSwaps container name
+            proxy_pass http://bookswaps-container:3000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+    
+    # SSL redirect (add this after setting up SSL)
+    # server {
+    #     listen 443 ssl;
+    #     server_name quantiq.co.ke www.quantiq.co.ke;
+    #     
+    #     ssl_certificate /etc/letsencrypt/live/quantiq.co.ke/fullchain.pem;
+    #     ssl_certificate_key /etc/letsencrypt/live/quantiq.co.ke/privkey.pem;
+    #     
+    #     location / {
+    #         proxy_pass http://quantiq-landing:80;
+    #         proxy_set_header Host $host;
+    #         proxy_set_header X-Real-IP $remote_addr;
+    #         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #         proxy_set_header X-Forwarded-Proto $scheme;
+    #     }
+    # }
+}
